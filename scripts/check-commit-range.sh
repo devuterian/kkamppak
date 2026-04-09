@@ -13,7 +13,8 @@ head=$2
 repo_root=$(cd "$(dirname "$0")/.." && pwd)
 checker="$repo_root/scripts/check-commit-standards.sh"
 
-commits=$(git -C "$repo_root" rev-list "$base..$head")
+# GitHub/GitLab merge commits do not carry project trailers; only check real commits.
+commits=$(git -C "$repo_root" rev-list --no-merges "$base..$head")
 
 if [ -z "$commits" ]; then
 	echo "No commits to check in range $base..$head"
