@@ -4,7 +4,7 @@ This repo adopts [LPFchan/repo-template](https://github.com/LPFchan/repo-templat
 
 ## Read first
 
-- `REPO.md`
+- **This repo’s** `REPO.md` (root) — not `scaffold/REPO.md` unless you are copying the scaffold elsewhere
 - `SPEC.md`
 - `STATUS.md`
 - `PLANS.md`
@@ -29,4 +29,6 @@ The macOS application source is under **`apps/kkamppak/`** (`kkamppak.xcodeproj`
 
 ## Skills
 
-See `skills/*/SKILL.md` for bounded procedures. Do not duplicate `REPO.md` policy inside skills.
+See `skills/*/SKILL.md` for bounded procedures (aligned with [repo-template](https://github.com/LPFchan/repo-template) `scaffold/skills/`). Do not duplicate root `REPO.md` policy inside skills.
+
+To adopt the same system in **another** repository, use [`recreate-prompt.md`](recreate-prompt.md) and copy from [`scaffold/`](scaffold/README.md) to that repo’s root.

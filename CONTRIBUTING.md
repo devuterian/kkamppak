@@ -8,6 +8,11 @@ Mac에서 Xcode로 `apps/kkamppak/kkamppak.xcodeproj`를 열고 빌드하면 돼
 
 레이아웃·README를 손볼 때 쓴 **원문 프롬프트**는 [`docs/operator-prompt-repo-template-adoption.md`](docs/operator-prompt-repo-template-adoption.md)에 두었어요.
 
+## repo-template 스캐폴드
+
+- [`recreate-prompt.md`](recreate-prompt.md) — 다른 레포에 같은 운영 체계를 심을 때 에이전트에게 줄 프롬프트
+- [`scaffold/`](scaffold/README.md) — [LPFchan/repo-template](https://github.com/LPFchan/repo-template) `scaffold/` 사본 (upstream-intake 제외)
+
 ## 커밋 메시지 (repo-template)
 
 이 저장소는 [LPFchan/repo-template](https://github.com/LPFchan/repo-template) 스타일의 **provenance trailer**를 써요.

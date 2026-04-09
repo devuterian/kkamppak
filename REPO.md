@@ -6,6 +6,9 @@ This document is the canonical repo contract for this repository. It follows the
 
 Keep product truth, current status, and agent workflows legible in-repo. The macOS app lives under `apps/kkamppak/`.
 
+**Canonical rules for this repo** are this file (루트 `REPO.md`) plus 루트의 `SPEC.md` / `STATUS.md` / `PLANS.md` / `INBOX.md`.  
+**Upstream verbatim copy** for bootstrapping other repos lives under [`scaffold/`](scaffold/README.md) (from [repo-template](https://github.com/LPFchan/repo-template)); see [`recreate-prompt.md`](recreate-prompt.md) for the adoption prompt.
+
 ## Project identity
 
 - **Project id:** `kkamppak`
