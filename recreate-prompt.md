@@ -1,5 +1,7 @@
 You are implementing a generic repo operating system for a repo managed by one operator plus many agents.
 
+**kkamppak note:** This repository already hosts the adopted files at the **repo root** (`REPO.md`, `skills/`, etc.). The copyable `scaffold/` tree is maintained only in [LPFchan/repo-template](https://github.com/LPFchan/repo-template/tree/main/scaffold); kkamppak does not duplicate it under `scaffold/`.
+
 Goal:
 Create a repo-native system that keeps truth, status, plans, research, decisions, execution logs, and optional upstream review clearly separated but tightly linked.
 

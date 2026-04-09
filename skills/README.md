@@ -1,6 +1,6 @@
 # Skills
 
-This directory is part of the repo-template scaffold.
+Repo-native procedural docs for **this** repository. Baseline skill shapes follow [repo-template `scaffold/skills/`](https://github.com/LPFchan/repo-template/tree/main/scaffold/skills).
 
 Use it as repo-native procedural documentation.
 Agents should read the relevant workflow even when their runtime does not auto-load skills.
