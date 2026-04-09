@@ -20,6 +20,7 @@ valid_base() {
 }
 
 # github.event.before is all zeros on first push of a new ref — "base..head" is invalid.
+# Merge commits do not carry project trailers; use --no-merges.
 if [ "$base" = "$ZERO" ] || [ -z "$base" ] || ! valid_base "$base"; then
 	if git -C "$repo_root" show-ref --verify --quiet refs/remotes/origin/main; then
 		commits=$(git -C "$repo_root" rev-list --no-merges "origin/main..$head")
