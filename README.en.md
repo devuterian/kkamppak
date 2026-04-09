@@ -52,3 +52,9 @@ Please file bugs and questions in [Issues](https://github.com/devuterian/kkamppa
 ## License
 
 [MIT License](LICENSE) — read the license text for disclaimers around system power and privileged operations.
+
+---
+
+**Repo layout, commit conventions, and agent-facing docs** lean heavily on [LPFchan/repo-template](https://github.com/LPFchan/repo-template). It made this repository much easier to keep coherent. **Thank you, LPFchan.**
+
+Korean README prose follows [Toss’s eight writing principles](https://toss.tech/article/8-writing-principles-of-toss) (see the Korean README).

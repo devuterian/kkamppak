@@ -13,3 +13,8 @@ Recorded by agent: cursor-background
 ## Verification
 
 - 훅/스크립트 실행 비트 설정됨 (`chmod +x`).
+
+## Follow-up (same log)
+
+- README 하단에 [LPFchan/repo-template](https://github.com/LPFchan/repo-template) 감사 문구 추가, 영문 README에 토스 원칙·감사 문구 정리.
+- 운영자 지시문 원문 보관: `docs/operator-prompt-repo-template-adoption.md`
