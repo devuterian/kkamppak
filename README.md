@@ -54,3 +54,7 @@
 [MIT License](LICENSE) — 시스템 전원·권한과 관련된 위험은 라이선스 전문과 면책 조항을 확인해 주세요.
 
 한국어 README 문장은 [토스의 8가지 라이팅 원칙](https://toss.tech/article/8-writing-principles-of-toss)을 참고해 짧게 맞췄어요.
+
+---
+
+이 저장소의 **폴더 뼈대·커밋 규칙·에이전트용 문서**는 [LPFchan/repo-template](https://github.com/LPFchan/repo-template)을 많이 참고해 맞췄어요. 덕분에 레포가 훨씬 정리됐어요. **고마워요, LPFchan님.**
