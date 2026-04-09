@@ -1,0 +1,32 @@
+# Compiles the macOS app on push/PR (no signing). Artifact: kkamppak.app.zip
+
+name: Build (macOS)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build kkamppak.app (unsigned)
+        run: |
+          set -euo pipefail
+          PROJ="apps/kkamppak/kkamppak.xcodeproj"
+          xcodebuild -project "$PROJ" -scheme kkamppak -configuration Release -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO build
+          APP=$(find ~/Library/Developer/Xcode/DerivedData -path '*/Build/Products/Release/kkamppak.app' -print -quit)
+          test -n "$APP" -a -d "$APP"
+          echo "BUILT_APP=$APP" >> "$GITHUB_ENV"
+          (cd "$(dirname "$APP")" && zip -r "$GITHUB_WORKSPACE/kkamppak.app.zip" kkamppak.app)
+
+      - name: Upload kkamppak.app.zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: kkamppak-app-release-unsigned
+          path: kkamppak.app.zip

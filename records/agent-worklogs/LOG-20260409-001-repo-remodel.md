@@ -20,3 +20,10 @@ Recorded by agent: cursor-background
 - 운영자 지시문 원문 보관: `docs/operator-prompt-repo-template-adoption.md`
 - `recreate-prompt.md` 추가, 루트 `skills/`를 업스트림 스캐폴드와 동기화, `REPO.md`·`AGENTS.md`·`CONTRIBUTING.md`에 안내 링크.
 - 중복이던 로컬 `scaffold/` 제거 — 복사용 원본은 [LPFchan/repo-template](https://github.com/LPFchan/repo-template/tree/main/scaffold)만 유지.
+
+## Follow-up 2026-04-10
+
+- `docs/smoke-test.md`, `docs/uninstall.md` 추가; README·README.en 설치 흐름(소스 우선 / 릴리스 선택)·Raycast 예시·LaunchDaemon 설명.
+- `SPEC.md`에 전원 프리셋·LaunchDaemon 역할 명시.
+- `PLANS.md`·`STATUS.md` 갱신(AppIcon은 보류 섹션).
+- `.github/workflows/build-macos.yml` — PR·main용 서명 없는 Xcode 빌드 + zip 아티팩트.

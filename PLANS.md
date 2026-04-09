@@ -8,19 +8,32 @@
 
 ### Release artifacts
 
-- **Outcome:** GitHub Releases에 `.app` zip 또는 빌드 산출물 업로드 흐름 문서화
-- **Why this is accepted:** README의 “Releases에서 받기”와 실제 배포를 맞추기 위함
-- **Preconditions:** 서명·아카이브 방침 결정
+- **Outcome:** GitHub Releases에 `.app` zip 업로드 (또는 CI 아티팩트를 릴리스에 붙이기). README **방법 B**와 맞출 것.
+- **Why this is accepted:** 사용자가 소스 빌드 없이 받을 수 있게.
+- **Preconditions:** 태그·릴리스 노트; (선택) Developer ID 서명 시 GitHub secret 연동.
 - **Related ids:** —
+
+### 문서·검증
+
+- **Outcome:** 스모크 테스트·제거 절차·Raycast 예시가 README·`docs/`에 정리됨.
+- **Status:** 진행 중 (`docs/smoke-test.md`, `docs/uninstall.md`).
+
+### CI 빌드
+
+- **Outcome:** PR·`main` 푸시 시 macOS runner에서 **서명 없이** `xcodebuild`로 컴파일 검증, `kkamppak.app.zip` 아티팩트.
+- **Workflow:** `.github/workflows/build-macos.yml`
 
 ## Sequencing
 
 ### Near term
 
-- **Initiative:** AppIcon 에셋 채우기
-- **Why now:** Dock·응용 프로그램 폴더에서 식별성 향상
+- **Initiative:** 첫 GitHub Release 게시 (unsigned zip이라도) + README와 동기화
+- **Initiative:** (선택) Release 워크플로로 태그 시 자동 zip 첨부
 
 ### Mid term
 
-- **Initiative:** 선택적 GitHub Actions로 Xcode 빌드 (macOS runner)
-- **Why later:** 서명·시크릿 정리 후
+- **Initiative:** Developer ID 서명 + (필요 시) 공증은 제품 정책 바뀔 때만 검토 — 현재 SPEC은 Notarization 비목표
+
+### 보류 (운영자 전용)
+
+- **Initiative:** AppIcon 에셋 채우기 — Dock 식별용; 별도 요청 시 진행

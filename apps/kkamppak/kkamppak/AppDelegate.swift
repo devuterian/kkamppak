@@ -137,9 +137,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return .custom
     }
 
-    private enum BlockMode { case `default`, remoteReady, custom }
-
-    private func classifyPmsetBlock(_ block: String) -> BlockMode {
+    private func classifyPmsetBlock(_ block: String) -> PowerMode {
         let sleepM = parsePmsetInt(key: "sleep", in: block)
         let displayM = parsePmsetInt(key: "displaysleep", in: block)
         let diskM = parsePmsetInt(key: "disksleep", in: block)
