@@ -18,3 +18,5 @@ Recorded by agent: cursor-background
 
 - README 하단에 [LPFchan/repo-template](https://github.com/LPFchan/repo-template) 감사 문구 추가, 영문 README에 토스 원칙·감사 문구 정리.
 - 운영자 지시문 원문 보관: `docs/operator-prompt-repo-template-adoption.md`
+- `recreate-prompt.md` 추가, 루트 `skills/`를 업스트림 스캐폴드와 동기화, `REPO.md`·`AGENTS.md`·`CONTRIBUTING.md`에 안내 링크.
+- 중복이던 로컬 `scaffold/` 제거 — 복사용 원본은 [LPFchan/repo-template](https://github.com/LPFchan/repo-template/tree/main/scaffold)만 유지.
