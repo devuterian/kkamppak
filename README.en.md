@@ -19,9 +19,16 @@ Repo operating model: [REPO.md](REPO.md). Product summary: [SPEC.md](SPEC.md).
 3. On **first launch**, enter your admin password once (installs helper script, LaunchDaemon, and a narrow `sudoers` rule).
 4. After that, pick a mode without typing your password again.
 
-**Option B — release binary (when published)**
+**Option B — release DMG (GitHub Actions)**
 
-If **[Releases](https://github.com/devuterian/kkamppak/releases)** has a zip or other artifact, download it and install the same way. If nothing is there yet, use **Option A**.
+Download **`kkamppak-vX.Y.Z.dmg`** from **[Releases](https://github.com/devuterian/kkamppak/releases)**. Pushing a `v*` tag triggers a workflow that builds the DMG and publishes the release:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Drag **kkamppak.app** from the DMG to **Applications**, then follow **Option A** for first-run install. If no release exists yet, use **Option A**.
 
 **If macOS blocks the app:** unsigned or ad-hoc builds may need **Right-click → Open** once, or approval under **System Settings → Privacy & Security**. This project assumes **no Notarization** is required by design.
 

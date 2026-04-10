@@ -13,6 +13,17 @@
 
 로컬에서 zip으로 묶을 때는 Release 산출물 폴더에서 예를 들어 `zip -r kkamppak.app.zip kkamppak.app` 을 실행하면 됩니다.
 
+## GitHub에서 DMG 릴리즈
+
+`v` 로 시작하는 태그를 푸시하면 Actions가 Release용 DMG를 만들고 [GitHub Releases](https://github.com/devuterian/kkamppak/releases)에 올립니다.
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+워크플로: `.github/workflows/release-dmg.yml` (서명·공증 없음).
+
 ## 산출물
 
 - 빌드 결과: Xcode가 지정한 DerivedData 경로의 `kkamppak.app`

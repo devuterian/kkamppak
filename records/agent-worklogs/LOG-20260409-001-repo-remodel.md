@@ -27,3 +27,8 @@ Recorded by agent: cursor-background
 - `SPEC.md`에 전원 프리셋·LaunchDaemon 역할 명시.
 - `PLANS.md`·`STATUS.md` 갱신(AppIcon은 보류 섹션).
 - `.github/workflows/build-macos.yml` — PR·main용 서명 없는 Xcode 빌드 + zip 아티팩트.
+
+## Follow-up — release DMG
+
+- `.github/workflows/release-dmg.yml`: `v*` 태그 푸시 시 `hdiutil` UDZO DMG + `softprops/action-gh-release` 로 GitHub Release 자동 생성.
+- README·README.en·`docs/build.md`·`PLANS.md`·`STATUS.md` 반영.
