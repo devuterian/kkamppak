@@ -8,9 +8,9 @@
 
 ### Release artifacts
 
-- **Outcome:** GitHub Releases에 `.app` zip 업로드 (또는 CI 아티팩트를 릴리스에 붙이기). README **방법 B**와 맞출 것.
+- **Outcome:** `v*` 태그 푸시 시 Actions가 **UDZO DMG** 빌드 후 GitHub Release 자동 생성 (`.github/workflows/release-dmg.yml`). PR·main용 zip 아티팩트는 `build-macos.yml`.
 - **Why this is accepted:** 사용자가 소스 빌드 없이 받을 수 있게.
-- **Preconditions:** 태그·릴리스 노트; (선택) Developer ID 서명 시 GitHub secret 연동.
+- **Preconditions:** 시맨틱 버전 태그 예: `v1.0.0`; (선택) Developer ID 서명 시 워크플로 확장.
 - **Related ids:** —
 
 ### 문서·검증
@@ -27,8 +27,7 @@
 
 ### Near term
 
-- **Initiative:** 첫 GitHub Release 게시 (unsigned zip이라도) + README와 동기화
-- **Initiative:** (선택) Release 워크플로로 태그 시 자동 zip 첨부
+- **Initiative:** 첫 `v*` 태그 푸시로 DMG 릴리즈 확인
 
 ### Mid term
 

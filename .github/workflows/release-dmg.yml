@@ -1,0 +1,48 @@
+# Tag push (v*) → Release 빌드, UDZO DMG 업로드, GitHub Release 생성
+
+name: Release (DMG)
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-14
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build kkamppak.app (unsigned)
+        run: |
+          set -euo pipefail
+          PROJ="apps/kkamppak/kkamppak.xcodeproj"
+          xcodebuild -project "$PROJ" -scheme kkamppak -configuration Release -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO build
+          APP=$(find ~/Library/Developer/Xcode/DerivedData -path '*/Build/Products/Release/kkamppak.app' -print -quit)
+          test -n "$APP" -a -d "$APP"
+          echo "BUILT_APP=$APP" >> "$GITHUB_ENV"
+
+      - name: Create DMG
+        run: |
+          set -euo pipefail
+          VOL="kkamppak"
+          DMG="kkamppak-${{ github.ref_name }}.dmg"
+          hdiutil create -volname "$VOL" -srcfolder "$BUILT_APP" -ov -format UDZO "$GITHUB_WORKSPACE/$DMG"
+          ls -la "$GITHUB_WORKSPACE/$DMG"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: kkamppak-${{ github.ref_name }}.dmg
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          body: |
+            **kkamppak** macOS 빌드 (서명·공증 없음). DMG 안의 `kkamppak.app`을 응용 프로그램 폴더로 옮긴 뒤 실행하세요.
+
+            자세한 설치·보안 안내: [README](https://github.com/${{ github.repository }}/blob/main/README.md)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

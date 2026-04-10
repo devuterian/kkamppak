@@ -19,9 +19,16 @@
 3. **첫 실행**에서 관리자 암호를 한 번 입력해요. (도구 스크립트·LaunchDaemon·`sudoers` 한 줄이 깔려요.)
 4. 그다음부터는 암호 없이 모드만 고르면 돼요.
 
-**방법 B — 릴리즈 바이너리 (있을 때)**
+**방법 B — 릴리즈 DMG (GitHub Actions)**
 
-[Releases](https://github.com/devuterian/kkamppak/releases)에 올라온 **zip 등**이 있으면 받아서 같은 방식으로 Applications에 넣고 실행하면 됩니다. 아직 없으면 **방법 A**를 쓰면 돼요.
+[Releases](https://github.com/devuterian/kkamppak/releases)에서 **`kkamppak-vX.Y.Z.dmg`** 를 받으면 됩니다. (저장소에 `v*` 태그를 푸시하면 Actions가 DMG를 만들고 릴리즈를 올립니다.)
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+DMG 안의 **kkamppak.app**을 응용 프로그램으로 옮긴 뒤 **방법 A**와 같이 첫 실행·설치를 진행하면 돼요. 릴리즈가 아직 없으면 **방법 A**를 쓰면 됩니다.
 
 **보안 경고가 뜨면:** 직접 빌드하거나 서명이 없으면 **우클릭 → 열기**로 한 번 실행하거나, **시스템 설정 → 개인 정보 보호 및 보안**에서 허용해 주면 돼요. 이 프로젝트는 기획상 **공증(Notarization) 없이** 배포해도 된다고 가정해요.
 
